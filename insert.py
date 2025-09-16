@@ -8,16 +8,16 @@ db_config = {
     "database": "json"    
 }
 
-# === LEER JSON ===
-json_path = r"D:\excel pdf\prueba.json" 
+# LEER JSON 
+json_path = r"D:\excel pdf\2013.json" 
 with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# === CONEXIÓN A MYSQL ===
+# CONEXIÓN A MYSQL
 conn = mysql.connector.connect(**db_config)
 cursor = conn.cursor()
 
-# === FUNCIÓN PARA INSERTAR ===
+#FUNCIÓN PARA INSERTAR 
 def insertar_registro(item):
     titulo = item["name"]
     url = item["url"]
@@ -80,11 +80,11 @@ def insertar_registro(item):
     """
     metas_doc = [
         (doc_id, "anio", str(gestion)),
-        (doc_id, "_anio", "fiedld_doc_672ce03b5e0c0"),
+        (doc_id, "_anio", "field_doc_672ce03b5e0c0"),
         (doc_id, "descripcion", titulo),
-        (doc_id, "_descripcion", "fiedld_doc_672ce0445e0c1"),
+        (doc_id, "_descripcion", "field_doc_672ce0445e0c1"),
         (doc_id, "documento", post_id),
-        (doc_id, "_documento", "fiedld_doc_672ce0765e0c4"),
+        (doc_id, "_documento", "field_doc_672ce0765e0c4"),
     ]
     cursor.executemany(sql_meta_doc, metas_doc)
 
@@ -93,6 +93,16 @@ def insertar_registro(item):
         "UPDATE wp_posts SET post_parent = %s WHERE ID = %s",
         (doc_id, post_id)
     )
+# nueva tabla
+    sql_meta_term="""
+    INSERT INTO wp_term_relationships (object_id, term_taxonomy_id, term_order)
+    VALUES (%s, %s, %s) """
+    taxonomi = '12'
+    metas_term = [
+        (post_id, taxonomi, 0)
+    ]
+    cursor.executemany(sql_meta_term, metas_term)
+
 
     print(f"✔ Insertado: {titulo} (ID={post_id})")
 
