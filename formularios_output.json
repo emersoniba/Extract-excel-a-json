@@ -1,0 +1,33 @@
+{
+    "formularios": [{
+            "gestion": 2024,
+            "name": "Formulario Único de Administración de Activos Fijos y Bienes",
+            "url": "https://www.oopp.gob.bo/wp-content/uploads/2020/antiguos/for%20adm%20de%20activos%20fijos.pdf",
+            "type": 5
+        },
+        {
+            "gestion": 2024,
+            "name": "Formulario Fondos con Cargo a Rendición de Cuentas",
+            "url": "https://www.oopp.gob.bo/wp-content/uploads/2020/antiguos/documentos/Formulario_Fondos%20con%20Cargo%20a%20Rendicion%20de%20Cuentas.pdf",
+            "type": 5
+        },
+        {
+            "gestion": 2024,
+            "name": "Formulario de Solicitud de Ingreso Sábados, Domingos o Feriados",
+            "url": "https://www.oopp.gob.bo/wp-content/uploads/2020/antiguos/documentos/AUTORIZACION%20INGRESO%20FUNCIONARIOS.pdf",
+            "type": 5
+        },
+        {
+            "gestion": 2024,
+            "name": "Formulario de Desvinculación Laboral",
+            "url": "https://www.oopp.gob.bo/wp-content/uploads/2020/antiguos/formulario_desvinculacion_laboral_RIP.pdf",
+            "type": 5
+        },
+        {
+            "gestion": 2024,
+            "name": "Formulario RESAP",
+            "url": "No encontrado",
+            "type": 5
+        }
+    ]
+}
